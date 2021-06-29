@@ -1,0 +1,21 @@
+// Global
+@import 'global/*.scss';
+
+// Parts
+@import "parts/page";
+@import "parts/header";
+@import "parts/main";
+@import "parts/footer";
+
+@import "parts/vue";
+
+
+// Project (DMS)
+@import "project/dms_chat";
+  @import "project/dms_chat-header";
+  @import "project/dms_chat-main";
+  @import "project/dms_chat-footer";
+
+@import "project/dms_menu-sidebar";
+@import "project/dms_lk";
+@import "project/dms_sidebar";
