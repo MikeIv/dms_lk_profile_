@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 @@include('components/page-blocks/_head.html',{
 "lang":"ru",
-"title":"DMS Lk v0.1",
+"title":"DMS Lk Prf v0.1",
 "description":"DMS личный кабинет",
 "keywords":"",
 "favicon":"img/favicons/favicon",
@@ -46,10 +46,15 @@
 @@include('components/page-blocks/_sidebar.html')
 
 <main class="main_lk">
-  <section id="lk" class="dms_lk">
+  <section id="lk" class="dms_lk-prf">
     <h1 class="dms_lk__h1 v-hidden">Главная страница</h1>
 
-    <button class="dms_lk__add-item btn">Создать дашборд</button>
+    <!-- prf sidebar -->
+    <section class="dms_prf-sidebar">
+      @@include('../bem-blocks/_dms_prf-sidebar.html')
+    </section>
+
+
 
 
 

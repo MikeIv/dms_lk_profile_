@@ -1,17 +1,34 @@
-[![version](https://img.shields.io/travis/MikeIv/gulp?style=plastic)]()
+
+[![Developed by MikeIv](https://img.shields.io/badge/dev%20by-MikeIV-green)]()
+[![Code style](https://badgen.net/badge/code%20style/standard/f2a)]()
 
 
 # На основе Easy-webdev-startpack
 
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/budfy/easy-webdev-startpack?style=plastic) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/budfy/Easy-webdev-startpack?style=plastic) ![GitHub last commit](https://img.shields.io/github/last-commit/budfy/easy-webdev-startpack?style=plastic) 
+
 
 ## Проект DMS. Личный кабинет. Профиль
+
+#### Используется компонентный подход
+
+>*Правила написания компонентов:*
+
+[корень]_[компонент]-[дочерний компонент]
+
+    _dms_menu-sidebar.html
+
+
+>*Правила написания стилей (БЭМ):*
+
+[корень]_[компонент]-[дочерний компонент]
+
+    _dms_menu-sidebar__wrapper--color.scss
 
 
 
 ## Содержание:
 
-- Профиль личного кабинета;
+- профиль личного кабинета;
 - данные профиля;
 
 
