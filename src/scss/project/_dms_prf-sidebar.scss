@@ -7,7 +7,53 @@
   margin: 0;
   padding: 0;
   padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+
+.dms_prf-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 100%;
+}
+
+.dms_prf-sidebar__item {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 4rem;
+
   padding-left: 2rem;
   padding-right: 2rem;
   box-sizing: border-box;
+
+  cursor: pointer;
+}
+
+.dms_prf-sidebar__icon-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  margin-right: 1rem;
+}
+
+.dms_prf-sidebar__item-icon {
+  width: 2rem;
+  height: 2rem;
+
+  fill: $darkgray;
+}
+
+.dms_prf-sidebar__title {
+  font-size: $s-Fs;
+  color: $darkgray;
+
+  user-select: none;
 }
