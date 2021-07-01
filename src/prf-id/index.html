@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-@@include('components/page-blocks/_head.html',{
-"lang":"ru",
-"title":"DMS Lk Prf v0.1",
-"description":"DMS личный кабинет",
-"keywords":"",
-"favicon":"img/favicons/favicon",
-})
+<!doctype html>
+<html lang="ru" class="page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+        content="DMS Система управления">
+  <meta name="keywords"
+        content="DMS">
+  <link rel="shortcut icon"
+        href="../assets/img/favicons/favicon.svg"
+        type="image/svg+xml">
+  <link rel="shortcut icon"
+        href="../assets/img/favicons/favicon.webp"
+        type="image/webp">
+  <link rel="shortcut icon"
+        href="../assets/img/favicons/favicon.png"
+        type="image/x-icon">
+  <link rel="stylesheet"
+        href="../css/libs.min.css">
+  <link rel="stylesheet"
+        href="../css/style.min.css">
+  <script src="https://unpkg.com/vue"></script>
+  <script src="vuelidate/dist/vuelidate.min.js"></script>
+  <title>DMS_prf Личные данные</title>
+</head>
+
 
 <body class="page_lk__body">
 <!-- inline svg sprite -->
@@ -91,17 +112,205 @@
   </symbol>
 </svg>
 <!-- ================= -->
-@@include('components/page-blocks/_header.html')
+<!-- inline svg sprite -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="752" height="40"
+     viewBox="0 0 752 40" style="display: none;">
+  <symbol>
+    <svg id="logo-dms" viewBox="0 0 81 27">
+      <path d="m0.47461 25.588v-0.666h0.81008c0.70807 0 1.2481-0.108 1.6202-0.3241 0.38404-0.228 0.66607-0.534 0.84609-0.9181 0.10801-0.252 0.16201-1.0081 0.16201-2.2682v-16.058c0-1.2481-0.066-2.0282-0.19802-2.3402-0.13201-0.31203-0.40204-0.58206-0.81008-0.81008-0.39604-0.24003-0.93609-0.36004-1.6202-0.36004h-0.81008v-0.66606h10.927c2.9163 0 5.2625 0.39604 7.0387 1.1881 2.1722 0.97209 3.8164 2.4422 4.9325 4.4104 1.1281 1.9682 1.6922 4.1944 1.6922 6.6786 0 1.7162-0.2761 3.3004-0.8281 4.7525-0.5521 1.4401-1.2661 2.6343-2.1422 3.5824-0.8761 0.936-1.8902 1.6921-3.0423 2.2682-1.1401 0.564-2.5383 1.0021-4.1945 1.3141-0.732 0.144-1.8841 0.216-3.4563 0.216h-10.927zm9.3069-23.024v19.046c0 1.0081 0.04801 1.6262 0.14402 1.8542 0.09604 0.228 0.25804 0.4021 0.48604 0.5221 0.324 0.18 0.7921 0.27 1.4041 0.27 2.0042 0 3.5344-0.6841 4.5905-2.0522 1.4401-1.8482 2.1602-4.7165 2.1602-8.6049 0-3.1323-0.492-5.6345-1.4761-7.5067-0.7801-1.4642-1.7822-2.4602-3.0063-2.9883-0.8641-0.37204-2.2983-0.55206-4.3025-0.54006z" fill="#195676"/>
+      <path d="m44.201 17.271 6.6246-16.094h9.937v0.66606h-0.792c-0.7201 0-1.2962 0.12602-1.7282 0.37804-0.3 0.16802-0.5401 0.45005-0.7201 0.84609-0.132 0.28802-0.198 1.0381-0.198 2.2502v16.094c0 1.2481 0.066 2.0282 0.198 2.3403 0.132 0.312 0.4021 0.588 0.8101 0.828 0.408 0.2281 0.9541 0.3421 1.6382 0.3421h0.792v0.666h-12.745v-0.666h0.792c0.7201 0 1.2962-0.126 1.7282-0.3781 0.3-0.168 0.5401-0.456 0.7201-0.8641 0.132-0.288 0.198-1.0441 0.198-2.2682v-18.092l-9.3609 22.268h-0.4321l-9.5049-22.106v17.192c0 1.2002 0.03 1.9382 0.09 2.2143 0.156 0.6 0.492 1.0921 1.0081 1.4761 0.528 0.372 1.3501 0.5581 2.4662 0.5581v0.666h-8.3528v-0.666h0.252c0.5401 0.012 1.0441-0.072 1.5122-0.2521 0.468-0.192 0.8221-0.444 1.0621-0.756 0.24-0.3121 0.426-0.7501 0.558-1.3142 0.024-0.132 0.036-0.744 0.036-1.8361v-15.446c0-1.2361-0.066-2.0042-0.198-2.3042-0.132-0.31203-0.402-0.58206-0.8101-0.81008-0.408-0.24003-0.9541-0.36004-1.6381-0.36004h-0.7741v-0.66606h9.973l6.8587 16.094z" fill="#195676"/>
+      <path d="m78.764 0.61914 0.1981 8.1368h-0.7381c-0.348-2.0402-1.2061-3.6784-2.5743-4.9145-1.3561-1.2481-2.8263-1.8722-4.4104-1.8722-1.2241 0-2.1962 0.33003-2.9163 0.99009-0.7081 0.64807-1.0621 1.3981-1.0621 2.2502 0 0.54005 0.126 1.0201 0.378 1.4401 0.3481 0.56406 0.9061 1.1221 1.6742 1.6742 0.5641 0.39604 1.8662 1.0981 3.9064 2.1062 2.8563 1.4042 4.7825 2.7303 5.7786 3.9784 0.9841 1.2481 1.4761 2.6763 1.4761 4.2844 0 2.0403-0.7981 3.7984-2.3942 5.2746-1.5842 1.4641-3.6004 2.1962-6.0486 2.1962-0.7681 0-1.4942-0.078-2.1783-0.234-0.684-0.156-1.5421-0.4501-2.5742-0.8821-0.5761-0.24-1.0501-0.3601-1.4222-0.3601-0.312 0-0.642 0.1201-0.99 0.3601-0.3481 0.24-0.6301 0.606-0.8461 1.0981h-0.6661v-9.2169h0.6661c0.528 2.5922 1.5421 4.5724 3.0423 5.9406 1.5121 1.3561 3.1383 2.0342 4.8785 2.0342 1.3441 0 2.4122-0.3661 3.2043-1.0981 0.8041-0.7321 1.2061-1.5842 1.2061-2.5563 0-0.5761-0.156-1.1341-0.468-1.6742-0.3001-0.54-0.7621-1.0501-1.3862-1.5301-0.624-0.4921-1.7282-1.1281-3.3123-1.9082-2.2202-1.0921-3.8164-2.0222-4.7885-2.7903s-1.7222-1.6261-2.2502-2.5742c-0.5161-0.94814-0.7741-1.9922-0.7741-3.1324 0-1.9442 0.7141-3.6004 2.1422-4.9685 1.4282-1.3681 3.2283-2.0522 5.4006-2.0522 0.792 0 1.5601 0.096009 2.3042 0.28803 0.564 0.14401 1.2481 0.41404 2.0522 0.81008 0.8161 0.38404 1.3861 0.57606 1.7102 0.57606 0.312 0 0.558-0.09601 0.738-0.28803 0.1801-0.19202 0.3481-0.65407 0.5041-1.3861h0.54z" fill="#195676"/>
+    </svg>
+    <svg id="icon-menu" viewBox="0 0 40 40">
+      <path d="M10 13H30V15.2222H10V13ZM10 18.5556H30V20.7778H10V18.5556ZM10 24.1111H30V26.3333H10V24.1111Z" fill="#757575"/>
+    </svg>
+    <svg id="icon-arrow" viewBox="0 0 40 40">
+      <path d="m25.007 11.43c6e-4 0.3337-0.1156 0.657-0.3285 0.914l-6.3975 7.6541 6.169 7.6684c0.1187 0.1461 0.2073 0.3142 0.2607 0.4946 0.0535 0.1804 0.0707 0.3696 0.0508 0.5567s-0.0766 0.3684-0.1668 0.5336c-0.0902 0.1651-0.2122 0.3108-0.3589 0.4286-0.146 0.1186-0.3141 0.2072-0.4945 0.2607-0.1804 0.0534-0.3696 0.0707-0.5567 0.0508s-0.3685-0.0766-0.5336-0.1668-0.3108-0.2122-0.4286-0.3589l-6.8973-8.5681c-0.2101-0.2555-0.3249-0.576-0.3249-0.9067 0-0.3308 0.1148-0.6513 0.3249-0.9068l7.14-8.5681c0.1199-0.1446 0.2671-0.2641 0.4333-0.3517 0.1661-0.0876 0.3479-0.1416 0.5349-0.1589 0.1871-0.01721 0.3757 0.0026 0.555 0.0584 0.1794 0.0557 0.346 0.1463 0.4903 0.2666 0.1638 0.1328 0.2962 0.3004 0.3875 0.4905 0.0914 0.1901 0.1395 0.3981 0.1409 0.609z" fill="#757575"/>
+    </svg>
+    <svg id="icon-sb-home" viewBox="0 0 40 40">
+      <path d="M17.4118 30V22.9412H22.1176V30H28V20.5882H31.5294L19.7647 10L8 20.5882H11.5294V30H17.4118Z" fill="#757575"/>
+    </svg>
+    <svg id="icon-sb-profile" viewBox="0 0 40 40">
+      <path d="m20 10c1.3261 0 2.5979 0.5268 3.5355 1.4645 0.9377 0.9376 1.4645 2.2094 1.4645 3.5355s-0.5268 2.5979-1.4645 3.5355c-0.9376 0.9377-2.2094 1.4645-3.5355 1.4645s-2.5979-0.5268-3.5355-1.4645c-0.9377-0.9376-1.4645-2.2094-1.4645-3.5355s0.5268-2.5979 1.4645-3.5355c0.9376-0.9377 2.2094-1.4645 3.5355-1.4645zm0 12.5c5.525 0 10 2.2375 10 5v2.5h-20v-2.5c0-2.7625 4.475-5 10-5z" fill="#757575"/>
+    </svg>
+    <svg id="icon-sb-status" viewBox="0 0 40 40">
+      <path d="m28.333 11.667h-6.6666v2.5h-3.3334v-2.5h-6.6666c-0.4421 0-0.866 0.1756-1.1785 0.4881-0.3126 0.3126-0.4882 0.7365-0.4882 1.1785v14.667c0 0.442 0.1756 0.8659 0.4882 1.1785 0.3125 0.3126 0.7364 0.4882 1.1785 0.4882h16.667c0.4421 0 0.866-0.1756 1.1785-0.4882 0.3126-0.3126 0.4882-0.7365 0.4882-1.1785v-14.667c0-0.442-0.1756-0.8659-0.4882-1.1785-0.3125-0.3125-0.7364-0.4881-1.1785-0.4881zm-11.667 6.1666c0.442 0 0.8659 0.1756 1.1785 0.4882 0.3125 0.3126 0.4881 0.7365 0.4881 1.1785s-0.1756 0.8659-0.4881 1.1785c-0.3126 0.3126-0.7365 0.4882-1.1785 0.4882-0.4421 0-0.866-0.1756-1.1785-0.4882-0.3126-0.3126-0.4882-0.7365-0.4882-1.1785s0.1756-0.8659 0.4882-1.1785c0.3125-0.3126 0.7364-0.4882 1.1785-0.4882zm3.3333 6.6667h-6.6667v-0.8333c0-1.1084 2.225-1.6667 3.3334-1.6667 1.1083 0 3.3333 0.5583 3.3333 1.6667v0.8333zm6.6667-0.1667h-5v-1.6666h5v1.6666zm0-3.3333h-5v-1.6667h5v1.6667zm0-3.3333h-5v-1.6667h5v1.6667zm-5.8334-4.3334h-1.6666v-3.3333h1.6666v3.3333z" fill="#757575"/>
+    </svg>
+    <svg id="icon-sb-invoice" viewBox="0 0 40 40">
+      <path d="m13 13h2v6h-2v-6zm5 0h-2v6h2v-6zm-5 14h2v-6h-2v6zm5-6h-2v6h2v-2h5v-2h-5v-2zm-8 8h2v-18h-2v18zm18-18v4h-7v-2h-2v6h2v-2h7v6h-2v-2h-2v6h2v-2h2v4h2v-18h-2z" fill="#757575"/>
+    </svg>
+    <svg id="icon-busines-pr" viewBox="0 0 40 40">
+      <path d="m15 13v14l11-7-11-7z" fill="#939393"/>
+    </svg>
+    <svg id="icon-notification" viewBox="0 0 40 40">
+      <path d="m29.75 26.19v0.9524h-18.75v-0.9524l2.0833-1.9048v-5.7143c0-2.9524 2.1146-5.5524 5.2084-6.3904v-0.2762c0-0.5052 0.2195-0.9897 0.6102-1.3469s0.9206-0.5579 1.4731-0.5579 1.0824 0.2007 1.4731 0.5579 0.6102 0.8417 0.6102 1.3469v0.2762c3.0938 0.838 5.2084 3.438 5.2084 6.3904v5.7143l2.0833 1.9048zm-7.2917 1.9047c0 0.5052-0.2195 0.9897-0.6102 1.3469s-0.9206 0.5579-1.4731 0.5579-1.0824-0.2007-1.4731-0.5579-0.6102-0.8417-0.6102-1.3469" fill="#939393"/>
+    </svg>
+    <svg id="icon-phone-app" viewBox="0 0 40 40">
+      <path d="m25.111 26.364h-10.926v-12.727h10.926v12.727zm0-16.364h-10.926c-1.2127 0-2.1851 0.8091-2.1851 1.8182v16.364c0 0.4822 0.2302 0.9447 0.64 1.2857 0.4098 0.3409 0.9656 0.5325 1.5451 0.5325h10.926c0.5796 0 1.1354-0.1916 1.5452-0.5325 0.4098-0.341 0.64-0.8035 0.64-1.2857v-16.364c0-1.0091-0.9833-1.8182-2.1852-1.8182z" fill="#939393"/>
+    </svg>
+    <svg id="icon-app" viewBox="0 0 40 40">
+      <path d="M11 11H15.4444V15.4444H11V11Z" fill="#757575"/>
+      <path d="M17.6666 11H22.1111V15.4444H17.6666V11Z" fill="#757575"/>
+      <path d="M24.3334 11H28.7778V15.4444H24.3334V11Z" fill="#757575"/>
+      <path d="M11 17.6667H15.4444V22.1111H11V17.6667Z" fill="#757575"/>
+      <path d="m17.667 17.667h4.4445v4.4444h-4.4445v-4.4444z" fill="#757575"/>
+      <path d="m24.333 17.667h4.4444v4.4444h-4.4444v-4.4444z" fill="#757575"/>
+      <path d="M11 24.3333H15.4444V28.7778H11V24.3333Z" fill="#757575"/>
+      <path d="m17.667 24.333h4.4445v4.4445h-4.4445v-4.4445z" fill="#757575"/>
+      <path d="m24.333 24.333h4.4444v4.4445h-4.4444v-4.4445z" fill="#757575"/>
+    </svg>
+  </symbol>
+</svg>
+<!-- ================= -->
 
-@@include('components/page-blocks/_sidebar.html')
+<header id="prf-id" class="header_lk">
+  <div class="header_lk__wrapper">
+
+
+
+    <button class="header_lk__menu-btn btn" @click="menuView = !menuView">
+      <svg class="header__icon-menu" role="button">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+    </button>
+
+    <!--  main sidebar  -->
+
+    <section class="dms_menu-sidebar" v-show="menuView" @close="menuView = false">
+      <button class="dms_menu-sidebar__close btn" @click="menuView = !menuView">
+        <svg class="dms_menu-sidebar__icon-close" role="button">
+          <use xlink:href="#icon-arrow"></use>
+        </svg>
+      </button>
+      <h1 class="dms_menu-sidebar__h1 v-hidden">Боковое меню></h1>
+      <div class="dms_menu-sidebar__wrapper">
+        <div class="dms_menu-sidebar__header">
+          <img src="/img/logo-DMS.svg" alt="логотип компании" class="dms_menu-sidebar__header-logo">
+        </div>
+
+        <ul class="dms_menu-sidebar__list">
+          <li class="dms_menu-sidebar__item">
+            <div class="dms_menu-sidebar__icon-cell">
+              <svg class="dms_menu-sidebar__item-icon" role="presentation">
+                <use xlink:href="#icon-sb-home"></use>
+              </svg>
+            </div>
+            <p class="dms_menu-sidebar__title">Главная</p>
+          </li>
+          <li class="dms_menu-sidebar__item active">
+            <div class="dms_menu-sidebar__icon-cell">
+              <svg class="dms_menu-sidebar__item-icon" role="presentation">
+                <use xlink:href="#icon-sb-profile"></use>
+              </svg>
+            </div>
+            <p class="dms_menu-sidebar__title">Профиль</p>
+          </li>
+          <li class="dms_menu-sidebar__item">
+            <div class="dms_menu-sidebar__icon-cell">
+              <svg class="dms_menu-sidebar__item-icon" role="presentation">
+                <use xlink:href="#icon-sb-status"></use>
+              </svg>
+            </div>
+            <p class="dms_menu-sidebar__title">Статусы</p>
+          </li>
+          <li class="dms_menu-sidebar__item">
+            <div class="dms_menu-sidebar__icon-cell">
+              <svg class="dms_menu-sidebar__item-icon" role="presentation">
+                <use xlink:href="#icon-sb-invoice"></use>
+              </svg>
+            </div>
+            <p class="dms_menu-sidebar__title">Счета</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--  ================  -->
+
+
+    <div class="header_lk__col-left">
+      <img src="/img/logo-DMS.svg" alt="логотип компании" class="dms_menu-sidebar__header-logo">
+    </div>
+
+    <a href="/" class="header_lk__head header_lk__head--mob">
+      <p class="header_lk__title header_lk__title--brb">Профиль</p>
+    </a>
+
+
+    <button class="header_lk__profile-btn btn header_lk__profile-btn--mob">
+      <img class="header_lk__profile-img" src="/img/icon-avatar.svg" alt="avatar">
+    </button>
+
+    <nav class="header_lk__nav">
+      <h3 class="header_lk__place">Личный кабинет</h3>
+      <span class="header_lk__name">Семёнов Юрий Анатольевич</span>
+
+      <ul class="header_lk__btn-block">
+        <li class="header_lk__btn-item">
+          <svg class="header_lk__icon" role="button">
+            <use xlink:href="#icon-busines-pr"></use>
+          </svg>
+
+          <div class="header_lk__item-sub">
+            <ul class="header_lk__sub-list">
+              <li class="header_lk__sub-item">
+                <a href="#" class="header_lk__sub-link">Напоминание</a>
+              </li>
+              <li class="header_lk__sub-item">
+                <a href="#" class="header_lk__sub-link">Аренда переговорки</a>
+              </li>
+            </ul>
+
+            <a href="#" class="header_lk__sub-link header_lk__sub-link--btn header_lk__sub-link--bordtop">Перейти в
+              каталог</a>
+
+          </div>
+        </li>
+        <li class="header_lk__btn-item">
+          <svg class="header_lk__icon" role="button">
+            <use xlink:href="#icon-notification"></use>
+          </svg>
+
+          <div class="header_lk__item-sub"></div>
+        </li>
+        <li class="header_lk__btn-item">
+          <svg class="header_lk__icon" role="button">
+            <use xlink:href="#icon-phone-app"></use>
+          </svg>
+
+          <div class="header_lk__item-sub"></div>
+        </li>
+        <li class="header_lk__btn-item">
+          <svg class="header_lk__icon" role="button">
+            <use xlink:href="#icon-app"></use>
+          </svg>
+
+          <div class="header_lk__item-sub"></div>
+        </li>
+      </ul>
+
+    </nav>
+
+  </div>
+</header>
+
+<section class="dms_sidebar">
+  @@include('../components/bem-blocks/_dms_menu-sidebar.html')
+</section>
 
 <main class="main_lk">
-  <section id="lk" class="dms_lk-prf">
+  <section class="dms_lk_prf">
     <h1 class="dms_lk__h1 v-hidden">Главная страница</h1>
 
     <!-- prf sidebar -->
-    <section class="dms_prf-sidebar">
-      @@include('components/bem-blocks/_dms_prf-sidebar.html')
+    <section class="dms_prf-sidebar dms_prf-sidebar--none">
+      <h2 class="dms_lk__h1 v-hidden">Профиль</h2>
+      @@include('../components/bem-blocks/_dms_prf-sidebar.html')
+    </section>
+
+    <!-- prf id -->
+    <section class="dms_prf">
+      <h2 class="dms_lk__h1 v-hidden">Профиль. Личные данные</h2>
+      @@include('../components/bem-blocks/_dms_prf-id.html')
     </section>
 
 
@@ -112,19 +321,20 @@
 
 
 
-@@include('components/page-blocks/_scripts.html')
+@@include('../components/page-blocks/_scripts.html')
 
 <script>
 
 
-  new Vue({
+  let vm = new Vue({
 
 
-    el: '#lk',
+    el: '#prf-id',
     data: {
       title: '',
       show: false,
       styleref: '',
+      menuView: false
     },
     methods: {
 
@@ -135,5 +345,4 @@
 
 </script>
 </body>
-
 </html>
