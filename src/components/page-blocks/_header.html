@@ -58,7 +58,8 @@
 
 <!--  main sidebar  -->
 
-    <section class="dms_menu-sidebar" v-show="menuView" @close="menuView = false">
+    <section class="dms_menu-sidebar dms_menu-sidebar--mob" :class="{ activeshow: menuView }" v-show="menuView"
+             @close="menuView = false">
       <button class="dms_menu-sidebar__close btn" @click="menuView = !menuView">
         <svg class="dms_menu-sidebar__icon-close" role="button">
           <use xlink:href="#icon-arrow"></use>

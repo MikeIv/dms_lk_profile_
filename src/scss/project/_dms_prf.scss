@@ -19,6 +19,13 @@
   justify-content: flex-start;
 
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    &--width {
+      width: 50%;
+    }
+  }
+
 }
 
 .dms_prf__title-item {
@@ -111,6 +118,10 @@
   width: 100%;
 
   margin-bottom: 1.6rem;
+
+  &--sb {
+    justify-content: space-between;
+  }
 }
 
 .dms_prf__header-low {
@@ -119,6 +130,10 @@
   font-size: $s-Fs;
   font-weight: 300;
   color: $midgray;
+
+  &--width {
+    width: auto;
+  }
 }
 
 .dms_prf__txt {
@@ -126,4 +141,13 @@
   font-size: $mainFs;
   font-weight: 400;
   color: $darkgray;
+}
+
+.dms_prf__icon {
+  width: 4rem;
+  height: 2rem;
+
+  &--sq {
+    width: 2rem;
+  }
 }
