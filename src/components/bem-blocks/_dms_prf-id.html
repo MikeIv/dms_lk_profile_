@@ -1,11 +1,26 @@
-<div class="dms_prf-id">
-  <h2 class="dms_prf__title-item">Личные данные</h2>
+<div id="prfid" class="dms_prf-id">
+  <div class="dms_prf__title-wrapper">
+    <h2 class="dms_prf__title-item">Личные данные</h2>
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right">
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-single-check"></use>
+      </svg>
+    </div>
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small">
+      <svg class="dms_prf__icon dms_prf__icon--red" role="button">
+        <use xlink:href="#icon-cross"></use>
+      </svg>
+    </div>
+  </div>
 
-  <article class="dms_prf__block">
+  <article class="dms_prf__block dms_prf__block--pt">
     <h3 class="dms_prf__block-title">Фото</h3>
     <div class="dms_prf__block-content">
       <div class="dms_prf__img-wrapper">
         <img src="/img/icon-avatar.svg" alt="Фото профиля" class="dms_prf__img">
+        <div class="dms_prf__img-wrapper-over">
+          <img src="/img/icon-change-foto.svg" alt="Фото профиля" class="dms_prf__img">
+        </div>
       </div>
     </div>
   </article>
@@ -16,7 +31,10 @@
       <ul class="dms_prf__content-list">
         <li class="dms_prf__content-item">
           <p class="dms_prf__header-low">Фамилия</p>
-          <p class="dms_prf__txt">Семёнов</p>
+          <div class="dms_prf__txt-input-block">
+            <p class="dms_prf__txt">{{ familiya }}</p>
+            <input v-model="familiya" class="dms_prf__txt-input" type="text" :placeholder="familiya">
+          </div>
         </li>
         <li class="dms_prf__content-item">
           <p class="dms_prf__header-low">Имя</p>
@@ -102,5 +120,26 @@
     </div>
   </article>
 
-
 </div>
+
+<script>
+
+
+const prfid =  new Vue({
+
+
+    el: '#prfid',
+    data: {
+      familiya: '',
+
+    },
+    methods: {
+      getFamiliya (){
+        familiya = this.familiya
+      },
+    },
+
+  })
+
+
+</script>
