@@ -58,12 +58,14 @@
   position: absolute;
   top: 0;
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
   width: 4rem;
   height: 4rem;
+
+  cursor: pointer;
 
   &--right {
     right: 1rem;
@@ -76,6 +78,11 @@
   &--small {
     width: 3rem;
     height: 4rem;
+  }
+
+  &.active {
+    display: flex;
+
   }
 }
 
@@ -221,6 +228,22 @@
   }
 }
 
+.dms_prf__txt-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  font-size: $mainFs;
+  font-weight: 300;
+  color: $gray;
+
+  &.active {
+    display: block;
+  }
+}
+
 .dms_prf__txt {
   width: 100%;
   font-size: $mainFs;
@@ -238,8 +261,9 @@
   width: 25rem;
   height: 2.8rem;
 
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 
   font-size: $mainFs;
   font-weight: 300;

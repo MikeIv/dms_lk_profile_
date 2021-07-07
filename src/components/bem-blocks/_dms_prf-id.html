@@ -1,12 +1,28 @@
 <div id="prfid" class="dms_prf-id">
   <div class="dms_prf__title-wrapper">
     <h2 class="dms_prf__title-item">Личные данные</h2>
-    <div class="dms_prf__icon-cell dms_prf__icon-cell--right">
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right dms_prf__icon-cell--small"
+         :class="{ active: status }"
+         @click="getStatus"
+
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-prf-correct"></use>
+      </svg>
+    </div>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right"
+         :class="{ active: !status }"
+    >
       <svg class="dms_prf__icon" role="button">
         <use xlink:href="#icon-single-check"></use>
       </svg>
     </div>
-    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small">
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small"
+         :class="{ active: !status }"
+         @click="getStatus"
+    >
       <svg class="dms_prf__icon dms_prf__icon--red" role="button">
         <use xlink:href="#icon-cross"></use>
       </svg>
@@ -30,10 +46,19 @@
     <div class="dms_prf__block-content">
       <ul class="dms_prf__content-list">
         <li class="dms_prf__content-item">
-          <p class="dms_prf__header-low">Фамилия</p>
+          <label class="dms_prf__header-low">Фамилия</label>
           <div class="dms_prf__txt-input-block">
+            <span class="dms_prf__txt-placeholder"
+                  :class="{ active: placeholder }"
+            >
+              Ваша фамилия {{ changePlaceholder }}
+            </span>
             <p class="dms_prf__txt">{{ familiya }}</p>
-            <input v-model="familiya" class="dms_prf__txt-input" type="text" :placeholder="familiya">
+            <input class="dms_prf__txt-input"
+                   type="text"
+                   v-model="familiya"
+                   :placeholder="familiya"
+            >
           </div>
         </li>
         <li class="dms_prf__content-item">
@@ -125,19 +150,31 @@
 <script>
 
 
-const prfid =  new Vue({
+  const prfid =  new Vue({
 
 
     el: '#prfid',
-    data: {
+    data: () => ({
       familiya: '',
+      title: '',
+      status: true,
+      placeholder: true,
 
-    },
+    }),
     methods: {
-      getFamiliya (){
-        familiya = this.familiya
+      getStatus () {
+        this.status = !this.status
       },
     },
+    computed: {
+      changePlaceholder () {
+        if(this.familiya !== '') {
+          this.placeholder = !this.placeholder
+        }else {
+          this.placeholder = true
+        }
+      },
+    }
 
   })
 
