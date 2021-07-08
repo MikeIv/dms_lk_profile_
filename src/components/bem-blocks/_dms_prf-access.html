@@ -1,61 +1,135 @@
-<div class="dms_prf-id">
-  <h2 class="dms_prf__title-item">Доступ</h2>
+<div id="prfa" class="dms_prf-id">
+  <!-- Title -->
+  <div class="dms_prf__title-wrapper">
+    <h2 class="dms_prf__title-item">Доступ</h2>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right dms_prf__icon-cell--small"
+         :class="{ active: status }"
+         @click="getStatus"
+
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-prf-correct"></use>
+      </svg>
+    </div>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right"
+         :class="{ active: !status }"
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-single-check"></use>
+      </svg>
+    </div>
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small"
+         :class="{ active: !status }"
+         @click="getStatus"
+    >
+      <svg class="dms_prf__icon dms_prf__icon--red" role="button">
+        <use xlink:href="#icon-cross"></use>
+      </svg>
+    </div>
+  </div>
+  <!-- =========== -->
 
 
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Фото</h3>
+  <article class="dms_prf__block dms_prf__block--pt dms_prf__block--p-none">
+    <div class="dms_prf__block-title-wrapper dms_prf__block-title-wrapper--p">
+      <h3 class="dms_prf__block-title">ООО “Данцер”</h3>
+      <svg class="dms_prf__icon dms_prf__icon--gray dms_prf__icon--small dms_prf__icon--mt" role="button">
+        <use xlink:href="#icon-select"></use>
+      </svg>
+    </div>
   </article>
 
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">ФИО</h3>
+  <article class="dms_prf__block dms_prf__block--p-none">
+    <div class="dms_prf__block-title-wrapper dms_prf__block-title-wrapper--bg dms_prf__block-title-wrapper--p">
+      <h3 class="dms_prf__block-title">ООО “Ракета”</h3>
+      <svg
+        class="dms_prf__icon dms_prf__icon--gray dms_prf__icon--small dms_prf__icon--mt dms_prf__icon--tr"
+        role="button">
+        <use xlink:href="#icon-select"></use>
+      </svg>
+    </div>
+
+    <section class="dms_prf__block-list">
+      <h2 class="dms_prf__block-title-list">Отметить все</h2>
+      <ul class="dms_prf__list-check">
+        <li class="dms_prf__item-check">
+          <p class="dms_prf__item-check-txt">Фото</p>
+          <svg
+            class="dms_prf__icon"
+            role="button">
+            <use xlink:href="#icon-single-check"></use>
+          </svg>
+        </li>
+        <li class="dms_prf__item-check">
+          <p class="dms_prf__item-check-txt dms_prf__item-check-txt--select">ФИО</p>
+          <svg
+            class="dms_prf__icon"
+            role="button">
+            <use xlink:href="#icon-single-check"></use>
+          </svg>
+        </li>
+        <li class="dms_prf__item-check">
+          <p class="dms_prf__item-check-txt">Дата рождения</p>
+        </li>
+        <li class="dms_prf__item-check">
+          <p class="dms_prf__item-check-txt dms_prf__item-check-txt--select">Гражданство</p>
+          <svg
+            class="dms_prf__icon"
+            role="button">
+            <use xlink:href="#icon-single-check"></use>
+          </svg>
+        </li>
+        <li class="dms_prf__item-check">
+          <p class="dms_prf__item-check-txt dms_prf__item-check-txt--select">E-mail</p>
+          <svg
+            class="dms_prf__icon"
+            role="button">
+            <use xlink:href="#icon-single-check"></use>
+          </svg>
+        </li>
+        <li class="dms_prf__item-check">
+          <p class="dms_prf__item-check-txt dms_prf__item-check-txt--select">Телефон</p>
+          <svg
+            class="dms_prf__icon"
+            role="button">
+            <use xlink:href="#icon-single-check"></use>
+          </svg>
+        </li>
+        <li class="dms_prf__item-check">
+          <p class="dms_prf__item-check-txt dms_prf__item-check-txt--select">Мессенджеры и соц. сети</p>
+          <svg
+            class="dms_prf__icon"
+            role="button">
+            <use xlink:href="#icon-single-check"></use>
+          </svg>
+        </li>
+      </ul>
+    </section>
+
   </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Дата рождения</h3>
-  </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Гражданство</h3>
-  </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">E-mail</h3>
-  </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Телефон</h3>
-  </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Мессенджеры и соц. сети</h3>
-  </article>
-
-
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Часовой пояс</h3>
-  </article>
-
-
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Паспорт (действующий)</h3>
-  </article>
-
-
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Рост</h3>
-  </article>
-
-
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Вес</h3>
-  </article>
-
-
-
 
 
 </div>
+
+
+
+<script>
+  const prfa =  new Vue({
+    el: '#prfa',
+    data: () => ({
+      status: true,
+    }),
+    methods: {
+      getStatus () {
+        this.status = !this.status
+      },
+    },
+    computed: {
+
+    }
+
+  })
+
+</script>

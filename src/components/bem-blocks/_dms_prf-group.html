@@ -1,18 +1,53 @@
-<div class="dms_prf-id">
-  <h2 class="dms_prf__title-item">Группы</h2>
+<div id="prfgr" class="dms_prf-id">
+  <!-- Title -->
+  <div class="dms_prf__title-wrapper">
+    <h2 class="dms_prf__title-item">Группы</h2>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right dms_prf__icon-cell--small"
+         :class="{ active: status }"
+         @click="getStatus"
+
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-prf-correct"></use>
+      </svg>
+    </div>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right"
+         :class="{ active: !status }"
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-single-check"></use>
+      </svg>
+    </div>
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small"
+         :class="{ active: !status }"
+         @click="getStatus"
+    >
+      <svg class="dms_prf__icon dms_prf__icon--red" role="button">
+        <use xlink:href="#icon-cross"></use>
+      </svg>
+    </div>
+  </div>
+  <!-- =========== -->
 
 
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Создать группу</h3>
+  <article class="dms_prf__block dms_prf__block--pt">
+    <div class="dms_prf__block-title-wrapper">
+      <h3 class="dms_prf__block-title dms_prf__block-title--fss">Группы</h3>
+      <h3 class="dms_prf__block-title dms_prf__block-title--fss">Вход по умолчанию</h3>
+    </div>
     <div class="dms_prf__block-content">
       <ul class="dms_prf__content-list">
         <li class="dms_prf__content-item dms_prf__content-item--sb">
-          <p class="dms_prf__header-low dms_prf__header-low--width">Личный кабинет</p>
-          <img src="/img/radio.svg" alt="stch" class="dms_prf__icon dms_prf__icon--sq">
+          <p class="dms_prf__header-low dms_prf__header-low--ms dms_prf__header-low--width">Личный кабинет</p>
+          <img src="/img/radio.svg" alt="stch" class="dms_prf__icon dms_prf__icon--small dms_prf__icon--ml">
+          <img src="/img/icon-dots.svg" alt="stch" class="dms_prf__icon dms_prf__icon--tr">
         </li>
         <li class="dms_prf__content-item dms_prf__content-item--sb">
-          <p class="dms_prf__header-low dms_prf__header-low--width">Работа</p>
-          <img src="/img/radio.svg" alt="stch" class="dms_prf__icon dms_prf__icon--sq">
+          <p class="dms_prf__header-low dms_prf__header-low--ms dms_prf__header-low--width">Работа</p>
+          <img src="/img/radio.svg" alt="stch" class="dms_prf__icon dms_prf__icon--small dms_prf__icon--ml">
+          <img src="/img/icon-dots.svg" alt="stch" class="dms_prf__icon dms_prf__icon--tr">
         </li>
       </ul>
     </div>
@@ -20,3 +55,24 @@
 
 
 </div>
+
+
+
+<script>
+  const prfgr =  new Vue({
+    el: '#prfgr',
+    data: () => ({
+      status: true,
+    }),
+    methods: {
+      getStatus () {
+        this.status = !this.status
+      },
+    },
+    computed: {
+
+    }
+
+  })
+
+</script>

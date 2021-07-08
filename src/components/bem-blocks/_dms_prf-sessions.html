@@ -1,14 +1,44 @@
-<div class="dms_prf-id">
-  <h2 class="dms_prf__title-item">Активные сессии</h2>
+<div id="prfsn" class="dms_prf-id">
+  <!-- Title -->
+  <div class="dms_prf__title-wrapper">
+    <h2 class="dms_prf__title-item">Активные сессии</h2>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right dms_prf__icon-cell--small"
+         :class="{ active: status }"
+         @click="getStatus"
+
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-prf-correct"></use>
+      </svg>
+    </div>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right"
+         :class="{ active: !status }"
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-single-check"></use>
+      </svg>
+    </div>
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small"
+         :class="{ active: !status }"
+         @click="getStatus"
+    >
+      <svg class="dms_prf__icon dms_prf__icon--red" role="button">
+        <use xlink:href="#icon-cross"></use>
+      </svg>
+    </div>
+  </div>
+  <!-- =========== -->
 
 
-  <article class="dms_prf__block">
+  <article class="dms_prf__block dms_prf__block--pt">
 <!--    <h3 class="dms_prf__block-title"></h3>-->
     <div class="dms_prf__block-content">
       <ul class="dms_prf__content-list">
         <li class="dms_prf__content-item">
           <p class="dms_prf__header-low">Устройство</p>
-          <p class="dms_prf__txt">Это устройство</p>
+          <p class="dms_prf__txt dms_prf__txt--green dms_prf__txt--bold">Это устройство</p>
         </li>
         <li class="dms_prf__content-item">
           <p class="dms_prf__header-low">IP-адрес</p>
@@ -40,7 +70,24 @@
   </article>
 
 
-
-
-
 </div>
+
+
+<script>
+  const prfct =  new Vue({
+    el: '#prfsn',
+    data: () => ({
+      status: true,
+    }),
+    methods: {
+      getStatus () {
+        this.status = !this.status
+      },
+    },
+    computed: {
+
+    }
+
+  })
+
+</script>

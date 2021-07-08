@@ -1,4 +1,5 @@
 <div id="prfid" class="dms_prf-id">
+<!-- Title -->
   <div class="dms_prf__title-wrapper">
     <h2 class="dms_prf__title-item">Личные данные</h2>
 
@@ -28,6 +29,7 @@
       </svg>
     </div>
   </div>
+<!-- =========== -->
 
   <article class="dms_prf__block dms_prf__block--pt">
     <h3 class="dms_prf__block-title">Фото</h3>
@@ -49,9 +51,9 @@
           <label class="dms_prf__header-low">Фамилия</label>
           <div class="dms_prf__txt-input-block">
             <span class="dms_prf__txt-placeholder"
-                  :class="{ active: placeholder }"
+                  :class="{ active: changePlaceholder }"
             >
-              Ваша фамилия {{ changePlaceholder }}
+              Ваша фамилия
             </span>
             <p class="dms_prf__txt">{{ familiya }}</p>
             <input class="dms_prf__txt-input"
@@ -62,12 +64,36 @@
           </div>
         </li>
         <li class="dms_prf__content-item">
-          <p class="dms_prf__header-low">Имя</p>
-          <p class="dms_prf__txt">Юрий</p>
+          <label class="dms_prf__header-low">Имя</label>
+          <div class="dms_prf__txt-input-block">
+            <span class="dms_prf__txt-placeholder"
+                  :class="{ active: changePlaceholderName }"
+            >
+              Ваше имя
+            </span>
+            <p class="dms_prf__txt">{{ name }}</p>
+            <input class="dms_prf__txt-input"
+                   type="text"
+                   v-model="name"
+                   :placeholder="name"
+            >
+          </div>
         </li>
         <li class="dms_prf__content-item">
-          <p class="dms_prf__header-low">Отчество</p>
-          <p class="dms_prf__txt">Анатольевич</p>
+          <label class="dms_prf__header-low">Отчество</label>
+          <div class="dms_prf__txt-input-block">
+            <span class="dms_prf__txt-placeholder"
+                  :class="{ active: changePlaceholderPatron }"
+            >
+              Ваше отчество
+            </span>
+            <p class="dms_prf__txt">{{ patron }}</p>
+            <input class="dms_prf__txt-input"
+                   type="text"
+                   v-model="patron"
+                   :placeholder="patron"
+            >
+          </div>
         </li>
       </ul>
     </div>
@@ -97,54 +123,6 @@
     </div>
   </article>
 
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Гражданство</h3>
-    <div class="dms_prf__block-content">
-      <ul class="dms_prf__content-list">
-        <li class="dms_prf__content-item">
-          <p class="dms_prf__header-low">Страна</p>
-          <p class="dms_prf__txt">Российская Федерация</p>
-        </li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Гражданство</h3>
-    <div class="dms_prf__block-content">
-      <ul class="dms_prf__content-list">
-        <li class="dms_prf__content-item">
-          <p class="dms_prf__header-low">Страна</p>
-          <p class="dms_prf__txt">Российская Федерация</p>
-        </li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Гражданство</h3>
-    <div class="dms_prf__block-content">
-      <ul class="dms_prf__content-list">
-        <li class="dms_prf__content-item">
-          <p class="dms_prf__header-low">Страна</p>
-          <p class="dms_prf__txt">Российская Федерация</p>
-        </li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="dms_prf__block">
-    <h3 class="dms_prf__block-title">Гражданство</h3>
-    <div class="dms_prf__block-content">
-      <ul class="dms_prf__content-list">
-        <li class="dms_prf__content-item">
-          <p class="dms_prf__header-low">Страна</p>
-          <p class="dms_prf__txt">Российская Федерация</p>
-        </li>
-      </ul>
-    </div>
-  </article>
-
 </div>
 
 <script>
@@ -156,6 +134,8 @@
     el: '#prfid',
     data: () => ({
       familiya: '',
+      name: '',
+      patron: '',
       title: '',
       status: true,
       placeholder: true,
@@ -169,10 +149,27 @@
     computed: {
       changePlaceholder () {
         if(this.familiya !== '') {
-          this.placeholder = !this.placeholder
+          this.placeholder = false
         }else {
           this.placeholder = true
         }
+        return this.placeholder
+      },
+      changePlaceholderName () {
+        if(this.name !== '') {
+          this.placeholder = false
+        }else {
+          this.placeholder = true
+        }
+        return this.placeholder
+      },
+      changePlaceholderPatron () {
+        if(this.name !== '') {
+          this.placeholder = false
+        }else {
+          this.placeholder = true
+        }
+        return this.placeholder
       },
     }
 

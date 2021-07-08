@@ -1,5 +1,35 @@
-<div class="dms_prf-id">
-  <h2 class="dms_prf__title-item">Документы</h2>
+<div id="prfd" class="dms_prf-id">
+  <!-- Title -->
+  <div class="dms_prf__title-wrapper">
+    <h2 class="dms_prf__title-item">Документы</h2>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right dms_prf__icon-cell--small"
+         :class="{ active: status }"
+         @click="getStatus"
+
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-prf-correct"></use>
+      </svg>
+    </div>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right"
+         :class="{ active: !status }"
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-single-check"></use>
+      </svg>
+    </div>
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small"
+         :class="{ active: !status }"
+         @click="getStatus"
+    >
+      <svg class="dms_prf__icon dms_prf__icon--red" role="button">
+        <use xlink:href="#icon-cross"></use>
+      </svg>
+    </div>
+  </div>
+  <!-- =========== -->
 
 
   <article class="dms_prf__block">
@@ -34,8 +64,26 @@
     </div>
   </article>
 
-
-
-
-
 </div>
+
+
+
+
+<script>
+  const prfd =  new Vue({
+    el: '#prfd',
+    data: () => ({
+      status: true,
+    }),
+    methods: {
+      getStatus () {
+        this.status = !this.status
+      },
+    },
+    computed: {
+
+    }
+
+  })
+
+</script>

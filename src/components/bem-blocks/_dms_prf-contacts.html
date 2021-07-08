@@ -1,18 +1,56 @@
-<div class="dms_prf-id">
-  <h2 class="dms_prf__title-item">Контактные данные</h2>
+<div id="prfct" class="dms_prf-id">
+  <div class="dms_prf__title-wrapper">
+    <h2 class="dms_prf__title-item">Контактные данные</h2>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right dms_prf__icon-cell--small"
+         :class="{ active: status }"
+         @click="getStatus"
+
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-prf-correct"></use>
+      </svg>
+    </div>
+
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--right"
+         :class="{ active: !status }"
+    >
+      <svg class="dms_prf__icon" role="button">
+        <use xlink:href="#icon-single-check"></use>
+      </svg>
+    </div>
+    <div class="dms_prf__icon-cell dms_prf__icon-cell--left dms_prf__icon-cell--small"
+         :class="{ active: !status }"
+         @click="getStatus"
+    >
+      <svg class="dms_prf__icon dms_prf__icon--red" role="button">
+        <use xlink:href="#icon-cross"></use>
+      </svg>
+    </div>
+  </div>
 
 
-  <article class="dms_prf__block">
+  <article class="dms_prf__block dms_prf__block--pt">
     <h3 class="dms_prf__block-title">E-mail</h3>
     <div class="dms_prf__block-content">
       <ul class="dms_prf__content-list">
         <li class="dms_prf__content-item">
           <p class="dms_prf__header-low">Рабочий</p>
           <p class="dms_prf__txt">login123@yandex.ru</p>
+
+          <div class="dms_prf__icon-wrapper">
+            <svg class="dms_prf__icon dms_prf__icon--green" role="presentation">
+              <use xlink:href="#icon-single-check"></use>
+            </svg>
+          </div>
         </li>
         <li class="dms_prf__content-item">
           <p class="dms_prf__header-low">Личный</p>
           <p class="dms_prf__txt">qwerty134@mail.ru</p>
+          <div class="dms_prf__attention-block">
+            <span class="dms_prf__attention">Не подтвержден.</span>
+            <button class="dms_prf__attention-btn">Выслать код подтверждения</button>
+          </div>
         </li>
       </ul>
     </div>
@@ -60,6 +98,28 @@
     </div>
   </article>
 
-
-
 </div>
+
+<script>
+
+
+  const prfct =  new Vue({
+
+
+    el: '#prfct',
+    data: () => ({
+      status: true,
+    }),
+    methods: {
+      getStatus () {
+        this.status = !this.status
+      },
+    },
+    computed: {
+
+    }
+
+  })
+
+
+</script>
